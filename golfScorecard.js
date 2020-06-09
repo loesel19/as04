@@ -287,7 +287,7 @@ console.log("new card created and saved to storage");
     }
     var str = JSON.stringify(pars);
     localStorage.setItem("pars", str);
-    window.location.href = "golfscorecards.html";
+    window.location.href = "golfScorecards.html";
     }
     function add1Par(num){
     var x = document.getElementById("p" + num);
