@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+  /* center-align table columns */
+th, td {text-align: center;} 
+</style>
+</head>
+<body onload="changePars()">
+<h1>Golf Scorecard</h1> <input id="month" type ="text" placeholder="mm"><input id="day" type ="text" placeholder="dd"><input id="year" type ="text" placeholder="yyyy"> | <button class="btn-warning" onclick="newCard()">Save Card</button> | <button class="btn-secondary" onclick="updatePars()">Change Par</button> | <button class="btn-danger" onclick="deleteCards()">Delete Cards</button>
+<table class="table table-striped">
+  <tr id="0">
+    <th>Hole</th>
+    <th>Par</th>
+    <th>Score</th>
+    <th>Over</th>
+    <th>Hole Avg</th>
+    <th></th>
+  </tr>
+  <tr id="1">
+    <td>1</td>
+    <td>4</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td><button class="btn btn-success" onclick="add1(1)">+</button> <button class="btn btn-danger" onclick="subtract1(1)">-</button> <button class="btn btn-warning" onclick="clearHole(1)">C</button></td>
+  </tr>
+  <tr id="2">
+    <td>2</td>
+    <td>4</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td><button class="btn btn-success" onclick="add1(2)">+</button> <button class="btn btn-danger" onclick="subtract1(2)">-</button> <button class="btn btn-warning" onclick="clearHole(2)">C</button></td>
+  </tr>
+  <tr id="3">
+    <td>3</td>
+    <td>4</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td><button class="btn btn-success" onclick="add1(3)">+</button> <button class="btn btn-danger" onclick="subtract1(3)">-</button> <button class="btn btn-warning" onclick="clearHole(3)">C</button></td>
+  </tr>
+  <tr id="4">
+    <td>4</td>
+    <td>4</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td><button class="btn btn-success" onclick="add1(4)">+</button> <button class="btn btn-danger" onclick="subtract1(4)">-</button> <button class="btn btn-warning" onclick="clearHole(4)">C</button></td>
+  </tr>
+  <tr id="5">
+    <td>5</td>
+    <td>4</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td><button class="btn btn-success" onclick="add1(5)">+</button> <button class="btn btn-danger" onclick="subtract1(5)">-</button> <button class="btn btn-warning" onclick="clearHole(5)">C</button></td>
+  </tr>
+  <tr id="6">
+    <td>6</td>
+    <td>4</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td><button class="btn btn-success" onclick="add1(6)">+</button> <button class="btn btn-danger" onclick="subtract1(6)">-</button> <button class="btn btn-warning" onclick="clearHole(6)">C</button></td>
+  </tr>
+  <tr id="7">
+    <td>7</td>
+    <td>4</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td><button class="btn btn-success" onclick="add1(7)">+</button> <button class="btn btn-danger" onclick="subtract1(7)">-</button> <button class="btn btn-warning" onclick="clearHole(7)">C</button></td>
+  </tr>
+  <tr id="8">
+    <td>8</td>
+    <td>4</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td><button class="btn btn-success" onclick="add1(8)">+</button> <button class="btn btn-danger" onclick="subtract1(8)">-</button> <button class="btn btn-warning" onclick="clearHole(8)">C</button></td>
+  </tr>
+  <tr id="9">
+    <td>9</td>
+    <td>4</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td><button class="btn btn-success" onclick="add1(9)">+</button> <button class="btn btn-danger" onclick="subtract1(9)">-</button> <button class="btn btn-warning" onclick="clearHole(9)">C</button></td>
+  </tr>
+  <tr id="10">
+    <td>10</td>
+    <td>4</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td><button class="btn btn-success" onclick="add1(10)">+</button> <button class="btn btn-danger" onclick="subtract1(10)">-</button> <button class="btn btn-warning" onclick="clearHole(10)">C</button></td>
+  </tr>
+  <tr id="11">
+    <td>11</td>
+    <td>4</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td><button class="btn btn-success" onclick="add1(11)">+</button> <button class="btn btn-danger" onclick="subtract1(11)">-</button> <button class="btn btn-warning" onclick="clearHole(11)">C</button></td>
+  </tr>
+  <tr id="12">
+    <td>12</td>
+    <td>4</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td><button class="btn btn-success" onclick="add1(12)">+</button> <button class="btn btn-danger" onclick="subtract1(12)">-</button> <button class="btn btn-warning" onclick="clearHole(12)">C</button></td>
+  </tr>
+  <tr id="13">
+    <td>13</td>
+    <td>4</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td><button class="btn btn-success" onclick="add1(13)">+</button> <button class="btn btn-danger" onclick="subtract1(13)">-</button> <button class="btn btn-warning" onclick="clearHole(13)">C</button></td>
+  </tr>
+  <tr id="14">
+    <td>14</td>
+    <td>4</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td><button class="btn btn-success" onclick="add1(14)">+</button> <button class="btn btn-danger" onclick="subtract1(14)">-</button> <button class="btn btn-warning" onclick="clearHole(14)">C</button></td>
+  </tr>
+  <tr id="15">
+    <td>15</td>
+    <td>4</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td><button class="btn btn-success" onclick="add1(15)">+</button> <button class="btn btn-danger" onclick="subtract1(15)">-</button> <button class="btn btn-warning" onclick="clearHole(15)">C</button></td>
+  </tr>
+  <tr id="16">
+    <td>16</td>
+    <td>4</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td><button class="btn btn-success" onclick="add1(16)">+</button> <button class="btn btn-danger" onclick="subtract1(16)">-</button> <button class="btn btn-warning" onclick="clearHole(16)">C</button></td>
+  </tr>
+  <tr id="17">
+    <td>17</td>
+    <td>4</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td><button class="btn btn-success" onclick="add1(17)">+</button> <button class="btn btn-danger" onclick="subtract1(17)">-</button> <button class="btn btn-warning" onclick="clearHole(17)">C</button></td>
+  </tr>
+  <tr id="18">
+    <td>18</td>
+    <td>4</td>
+    <td>-</td>
+    <td>-</td>
+    <td>-</td>
+    <td><button class="btn btn-success" onclick="add1(18)">+</button> <button class="btn btn-danger" onclick="subtract1(18)">-</button> <button class="btn btn-warning" onclick="clearHole(18)">C</button></td>
+  </tr>
+  <tr id="19">
+    <td class="allTotal"></td>
+    <td class="parTotal"></td>
+    <td class="scoreTotal"></td>
+    <td class="overTotal"></td>
+    <td class="scoreAvg"></td>
+    <td></td>
+  </tr>
+</table>
+<script src='golfScorecard.js'></script>
+</body>
+</html>
