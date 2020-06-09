@@ -27,8 +27,11 @@
       //since cards is an object of arrays we have to first traverse to the rounds then the whole we are on then get the score
       var arr = cards[i];
       var secondArr = arr[num]
+      console.log(secondArr[1]);
+      if(secondArr[1]){
       havg = havg + Number.parseFloat(secondArr[1]);
       numOfRounds++;
+      }
     }
     numOfRounds++;
   }
@@ -98,8 +101,10 @@
       //since cards is an object of arrays we have to first traverse to the rounds then the whole we are on then get the score
       var arr = cards[i];
       var secondArr = arr[num2]
+      if(secondArr[1]){
       havg = havg + secondArr[1];
       numOfRounds++;
+      }
     }
     numOfRounds++;
   }
