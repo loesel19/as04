@@ -256,7 +256,7 @@ console.log("new card created and saved to storage");
     }
     function changePars(){
         var pars = JSON.parse(localStorage.getItem("pars"));
-        if(pars[4] != null){
+        if(pars){
         for(var i = 0; i <= 17; i++){
             document.getElementById(i + 1).children[1].innerHTML = pars[i];
         }
