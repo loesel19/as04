@@ -85,7 +85,7 @@ function appendTableRows() {
 		cell4.innerHTML = Math.round(clubs[i][6]); // numOfShots
 		cell5.innerHTML = "<button class='btn btn-success cmn_noPadding cmn_fullHeight' onclick='displayclubDistanceEntryForm(" + i + ");'>&nbsp;&nbsp;+&nbsp;&nbsp;</button>";
     cell6.innerHTML = clubs[i][2]; // clubName
-    cell7.innerHTML = "<button class='btn btn-danger cmn_noPadding cmn_fullHeight' >&nbsp;&nbsp;-&nbsp;&nbsp;</button>";
+    cell7.innerHTML = "<button class='btn btn-danger cmn_noPadding cmn_fullHeight' onclick='comingSoon();' >&nbsp;&nbsp;-&nbsp;&nbsp;</button>";
 		// cell6.innerHTML = clubs[i][2] + ", " + clubs[i][7] + "&deg;"; 
 	}
 }
@@ -244,4 +244,7 @@ x.cell7.innerHTML = "<button class='btn btn-danger cmn_noPadding cmn_fullHeight'
 delete clubs[clubs.length - 1];
 var str = JSON.stringify(clubs);
 localStorage.setItem("clubs", str);
+}
+function comingSoon(){
+	alert("club deletion coming soon!");
 }
