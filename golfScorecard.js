@@ -26,8 +26,7 @@
     for(var i = 0; i < cards.length; i++){
       //since cards is an object of arrays we have to first traverse to the rounds then the whole we are on then get the score
       var arr = cards[i];
-      var secondArr = arr[num]
-      console.log(secondArr[1]);
+      var secondArr = arr[num];
       if(secondArr[1]){
       havg = havg + Number.parseFloat(secondArr[1]);
       numOfRounds++;
@@ -129,7 +128,7 @@
           var temp = havg/numOfRounds;
         y.children[4].innerHTML = (Number.parseFloat(temp)).toFixed(2);
         }else{
-          y.children[4].innerHTML = Number.parseFloat(x.children[2].innerHTML);
+          y.children[4].innerHTML = Number.parseFloat(y.children[2].innerHTML);
         }
         }
         var count2 = 1;
@@ -191,6 +190,14 @@
       o.children[3].innerHTML = over3;
     }
     function newCard(){
+      var temp1, temp2, temp3;
+      temp1 = document.getElementById("month");
+                    temp2 = document.getElementById("day");
+                    temp3 = document.getElementById("year");
+                    if(temp1.value == "" || temp2.value == "" || temp3.value == ""){
+                      temp3.value = "enter a date first"
+                    }
+                    else{
         //retrieve json array of rounds
         var cards = JSON.parse(localStorage.getItem("cards"));       
         if(cards == null){
@@ -223,6 +230,8 @@
             var str = JSON.stringify(cards)
             localStorage.setItem("cards", str);
             console.log("first instanciation of rounds storage");
+                    //refresh page
+      window.location.href = "golfScorecards.html";
         }
         else{
         // create new card
@@ -249,9 +258,11 @@
         var str = JSON.stringify(cards);
 localStorage.setItem("cards", str);
 console.log("new card created and saved to storage");
-        }
         //refresh page
-      window.location.href = "golfScorecards.html";
+        window.location.href = "golfScorecards.html";
+        }
+      }
+
     }
     function updatePars(){
     window.location.href = "updatePars.html"
